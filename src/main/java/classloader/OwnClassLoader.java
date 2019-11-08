@@ -6,6 +6,8 @@ import org.apache.commons.collections.map.LRUMap;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 
 /**
@@ -29,14 +31,14 @@ public class OwnClassLoader extends ClassLoader {
 
     public OwnClassLoader() {
 
-
+        timeToLive = 600 * 1000;
         cacheMap = new LRUMap();
 
             Thread t = new Thread(new Runnable() {
                 public void run() {
                     while (true) {
                         try {
-                            Thread.sleep(600 * 1000);
+                            Thread.sleep(timeToLive);
                         } catch (InterruptedException ex) {
                         }
                         cleanup();
@@ -55,22 +57,33 @@ public class OwnClassLoader extends ClassLoader {
         }
     }
 
-    public void addClass(String name) throws ClassNotFoundException {
+    public Class addClass(String name) throws ClassNotFoundException {
         if(!contains(name)) {
-            put(name,findClass(name));
+            Class cl = findClass(name);
+            put(name,cl);
+            return cl;
         } else{
             System.out.println("You've already added this class.");
         }
+        return null;
     }
 
 
-    public void updateClass(String name) throws ClassNotFoundException {
-        if(contains(name)) {
-            System.out.println("Class is updated.");
-        }else{
-            System.out.println("There is no such class.");
+    public Class updateClass(String name) throws ClassNotFoundException {
+        Class clazz = Class.forName(name);
+        final URL[] urls = new URL[1];
+        urls[0] =  clazz.getProtectionDomain().getCodeSource().getLocation();
+        final ClassLoader delegateParent = clazz.getClassLoader().getParent();
+        try (final URLClassLoader cl = new URLClassLoader(urls, delegateParent)) {
+            final Class<?> reloadedClazz = cl.loadClass(clazz.getName());
+            return reloadedClazz;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return null;
     }
+
+
 
     public boolean contains(String key) {
         synchronized (cacheMap) {
@@ -113,6 +126,17 @@ public class OwnClassLoader extends ClassLoader {
             e.printStackTrace();
         }
         return byteSt.toByteArray();
+    }
+
+    public void cleanup(String name) {
+        synchronized (cacheMap) {
+            CacheObject c = (CacheObject) cacheMap.get(name);
+            if (c != null) {
+                cacheMap.remove(name);
+            } else {
+                c.lastAccessed = System.currentTimeMillis();
+            }
+        }
     }
 
     public void cleanup() {

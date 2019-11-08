@@ -8,6 +8,9 @@ import interfaces.Animal;
  * @version 4.0
  */
 public class Dog implements Animal {
+    private String name;
+    private int age;
+    private double weight;
     /**
      * Overrided method which prints info about entities.Dog playing
      */

@@ -8,6 +8,8 @@ import interfaces.Animal;
  * @version 4.0
  */
 public class Cat implements Animal {
+    private String name;
+    private String age;
     /**
      * Overrided method which prints info about entities.Cat playing
      */

@@ -4,6 +4,9 @@ import classloader.OwnClassLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -15,6 +18,7 @@ import java.util.Scanner;
  */
 public class Runner {
     private static Logger logger = LogManager.getLogger(Runner.class);
+    private static  int swValue;
 
     public static void main(String[] args) {
         OwnClassLoader cl = new OwnClassLoader();
@@ -28,18 +32,21 @@ public class Runner {
     }
 
     private static void run(OwnClassLoader cl, Scanner scanner) {
-        int swValue = scanner.nextInt();
+        System.out.println("Please choose method or enter 3 to exit...");
+        swValue = scanner.nextInt();
         try {
             switch (swValue) {
                 case 1:
                     System.out.println("Please enter class path and name:");
                     String className = scanner.next();
-                    cl.addClass(className);
+                    Class myClass = cl.addClass(className);
+                    Arrays.stream(myClass.getDeclaredFields()).forEach(field -> System.out.println(field.getName()));
                     run(cl, scanner);
                 case 2:
                     System.out.println("Please enter class path and name:");
                     String updateClassName = scanner.next();
-                    cl.updateClass(updateClassName);
+                    Class myUpdatedClass = cl.updateClass(updateClassName);
+                    Arrays.stream(myUpdatedClass.getDeclaredFields()).forEach(field -> System.out.println(field.getName()));
                     run(cl, scanner);
                 case 3:
                     break;
