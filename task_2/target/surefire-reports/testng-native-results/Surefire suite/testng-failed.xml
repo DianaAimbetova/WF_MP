@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="testng.TestCalculator">
+        <methods>
+          <include name="testRoot"/>
+          <include name="testPower"/>
+          <include name="drop"/>
+          <include name="testSubtract"/>
+          <include name="testDivide"/>
+          <include name="testAdd"/>
+          <include name="prepareData"/>
+        </methods>
+      </class> <!-- testng.TestCalculator -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

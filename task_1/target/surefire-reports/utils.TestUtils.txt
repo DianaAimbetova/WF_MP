@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: utils.TestUtils
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 0.017 s <<< FAILURE! - in utils.TestUtils
+testFactorialWithTimeout1  Time elapsed: 0.011 s  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 1 milliseconds
+	at utils.TestUtils.testFactorialWithTimeout1(TestUtils.java:54)
+

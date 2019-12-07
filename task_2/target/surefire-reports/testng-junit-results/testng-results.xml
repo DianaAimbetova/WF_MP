@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="99" started-at="2019-12-07T14:08:58Z" finished-at="2019-12-07T14:08:58Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="99" started-at="2019-12-07T14:08:58Z" finished-at="2019-12-07T14:08:58Z">
+      <class name="junit.TestCalculator">
+        <test-method status="PASS" signature="testDivideByZero()[pri:0, instance:testDivideByZero(junit.TestCalculator)]" name="testDivideByZero" duration-ms="2" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDivideByZero -->
+        <test-method status="PASS" signature="testAdd()[pri:0, instance:testAdd(junit.TestCalculator)]" name="testAdd" duration-ms="5" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd -->
+        <test-method status="PASS" signature="testSubtract()[pri:0, instance:testSubtract(junit.TestCalculator)]" name="testSubtract" duration-ms="0" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubtract -->
+        <test-method status="PASS" signature="testPower()[pri:0, instance:testPower(junit.TestCalculator)]" name="testPower" duration-ms="1" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPower -->
+        <test-method status="PASS" signature="testRoot()[pri:0, instance:testRoot(junit.TestCalculator)]" name="testRoot" duration-ms="0" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRoot -->
+        <test-method status="PASS" signature="testFibonacci()[pri:0, instance:testFibonacci(junit.TestCalculator)]" name="testFibonacci" duration-ms="49" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFibonacci -->
+        <test-method status="PASS" signature="testFactorialWithTimeout1()[pri:0, instance:testFactorialWithTimeout1(junit.TestCalculator)]" name="testFactorialWithTimeout1" duration-ms="1" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFactorialWithTimeout1 -->
+        <test-method status="PASS" signature="testDivide()[pri:0, instance:testDivide(junit.TestCalculator)]" name="testDivide" duration-ms="0" started-at="2019-12-07T20:08:58Z" finished-at="2019-12-07T20:08:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDivide -->
+      </class> <!-- junit.TestCalculator -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
