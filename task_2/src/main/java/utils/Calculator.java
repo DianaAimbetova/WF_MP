@@ -30,7 +30,7 @@ public class Calculator {
     }
 
     public  double power(double base, double exponent) {
-        return Math.pow(base, exponent);
+        return Math.pow(base, exponent); // :) Math.pow()
     }
 
     public boolean isPrime(double number)
@@ -49,8 +49,7 @@ public class Calculator {
         List<Integer> result = new ArrayList<>();
         int number1 = 0;
         int number2 = 1;
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             result.add(number1);
             int sum = number1 + number2;
             number1 = number2;
