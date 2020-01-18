@@ -7,6 +7,7 @@ import java.util.List;
 public class Utils {
 
     public static String concatenateWords(List<String> words) {
+        //I would use StringBuilder here.
         String result = "";
         for (String word : words) {
             result = result.concat(word);
@@ -15,11 +16,12 @@ public class Utils {
     }
 
     public static String computeFactorial(int n) {
-        if (n < 0)
+        if (n < 0) {
             throw new IllegalArgumentException();
-        BigInteger fact = new BigInteger("1");
-        for (int i = 1; i <= n; i++) {
-            fact = fact.multiply(new BigInteger(i + ""));
+        }
+        BigInteger fact = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            fact = fact.multiply(BigInteger.valueOf(i));
         }
         return fact.toString();
     }

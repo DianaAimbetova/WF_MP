@@ -12,6 +12,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+//!!! The assignment was to test Service lauer by mocking DAO, instead of this you just tested created mocks.
 @RunWith(MockitoJUnitRunner.class)
 public class TestMyPersistenceDAO {
 
@@ -23,7 +24,6 @@ public class TestMyPersistenceDAO {
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
-
     @Test
     public void testCreateMilliTimeItem() {
         when(myPersistenceDAO.createMilliTimeItem()).thenReturn(100000L);
