@@ -50,12 +50,6 @@
         <!-- util -->
 
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>${modelmapper.version}</version>
@@ -79,8 +73,7 @@
     </build>
 
     <properties>
-        <start-class>com.baeldung.SpringBootRestApplication</start-class>
-        <guava.version>27.0.1-jre</guava.version>
+        <start-class>com.example.SpringBootRestApplication</start-class>
         <xstream.version>1.4.11.1</xstream.version>
         <modelmapper.version>2.3.5</modelmapper.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
