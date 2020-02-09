@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.soapexample.com/xml"
+           targetNamespace="http://www.soapexample.com/xml" elementFormDefault="qualified">
+
+    <xs:element name="UserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" type="tns:User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="User">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="userName" type="xs:string"/>
+            <xs:element name="userSurname" type="xs:string"/>
+            <xs:element name="mail" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>
