@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="User" type="{http://www.soapexample.com/xml}User"/>
+ *         &lt;element name="ServiceStatus" type="{http://www.soapexample.com/xml}ServiceStatus"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "user"
+    "serviceStatus"
 })
-@XmlRootElement(name = "UserResponse")
-public class UserResponse {
+@XmlRootElement(name = "UpdateUserResponse")
+public class UpdateUserResponse {
 
-    @XmlElement(name = "User", required = true)
-    protected User user;
+    @XmlElement(name = "ServiceStatus", required = true)
+    protected ServiceStatus serviceStatus;
 
     /**
-     * Gets the value of the user property.
+     * Gets the value of the serviceStatus property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link ServiceStatus }
      *     
      */
-    public User getUser() {
-        return user;
+    public ServiceStatus getServiceStatus() {
+        return serviceStatus;
     }
 
     /**
-     * Sets the value of the user property.
+     * Sets the value of the serviceStatus property.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link ServiceStatus }
      *     
      */
-    public void setUser(User value) {
-        this.user = value;
+    public void setServiceStatus(ServiceStatus value) {
+        this.serviceStatus = value;
     }
 
 }

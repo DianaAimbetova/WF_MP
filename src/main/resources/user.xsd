@@ -9,10 +9,75 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="GetAllUserRequest">
+        <xs:complexType/>
+    </xs:element>
+
     <xs:element name="UserResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="User" type="tns:User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User"  maxOccurs="unbounded" type="tns:User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ServiceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CreateUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:string"/>
+                <xs:element name="userName" type="xs:string"/>
+                <xs:element name="userSurname" type="xs:string"/>
+                <xs:element name="mail" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ServiceStatus" type="tns:ServiceStatus"/>
+                <xs:element name="User" type="tns:User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdateUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" type="tns:User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdateUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ServiceStatus" type="tns:ServiceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DeleteUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DeleteUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ServiceStatus" type="tns:ServiceStatus"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

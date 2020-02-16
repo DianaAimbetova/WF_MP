@@ -10,7 +10,6 @@ package com.soapexample.xml;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,9 +23,6 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="User" type="{http://www.soapexample.com/xml}User"/>
- *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -35,37 +31,9 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "user"
-})
-@XmlRootElement(name = "UserResponse")
-public class UserResponse {
+@XmlType(name = "")
+@XmlRootElement(name = "GetAllUserRequest")
+public class GetAllUserRequest {
 
-    @XmlElement(name = "User", required = true)
-    protected User user;
-
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
-     */
-    public void setUser(User value) {
-        this.user = value;
-    }
 
 }

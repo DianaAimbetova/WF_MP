@@ -6,7 +6,9 @@ import com.soapexample.xml.User;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -43,5 +45,30 @@ public class UserService {
         return users.get(userId);
     }
 
+    public static List<User> findAllUsers(){
+        List<User> list = new ArrayList<>();
+        users.values().forEach(e -> list.add(e));
+        return list;
+    }
 
+
+    public User update(String id, User user) {
+        user.setUserId(id);
+        User oldUser = users.replace(id, user);
+        return oldUser == null ? null : user;
+    }
+
+    public void delete(String id) {
+        users.remove(id);
+    }
+
+
+    public boolean create(User user) {
+        if (users.get(user.getUserId()) != null) {
+            return false;
+        } else {
+            users.put(user.getUserId(), user);
+            return true;
+        }
+    }
 }
