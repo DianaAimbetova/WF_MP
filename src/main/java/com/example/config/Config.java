@@ -34,7 +34,7 @@ public class Config extends WsConfigurerAdapter {
 	}
 
 	@Bean
-	public XsdSchema studentSchema() {
+	public XsdSchema userSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("user.xsd"));
 	}
 }
